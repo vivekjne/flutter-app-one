@@ -3,18 +3,25 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'welcome.dart';
 
-class Intro extends StatelessWidget {
+class Intro extends StatefulWidget {
+  @override
+  _IntroState createState() => _IntroState();
+}
+
+class _IntroState extends State<Intro> {
+  @override
+  void initState() {
+    Timer(Duration(seconds: 3), () {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Welcome()));
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 3), () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Welcome(),
-          ));
-    });
     return Container(
-      color: Color(0x0ff9146fe),
+      color: Theme.of(context).primaryColor,
       child: Center(
         child: Image(
           color: Colors.black,
