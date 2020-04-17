@@ -34,7 +34,7 @@ class Welcome extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(8.0),
                   ),
                   padding: EdgeInsets.symmetric(vertical: 16),
-                  color: Color(0x0ff9146fe),
+                  color: Theme.of(context).primaryColor,
                   onPressed: () => true,
                   child: Text(
                     'Log In',
