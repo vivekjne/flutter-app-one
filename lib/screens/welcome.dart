@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'signup.dart';
+import 'login.dart';
+
 class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class Welcome extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                width: constraints.maxWidth / 2.5,
+                width: constraints.maxWidth / 1.8,
                 child: Text(
                   'Welcome to Twitch',
                   style: TextStyle(
@@ -35,7 +37,12 @@ class Welcome extends StatelessWidget {
                   ),
                   padding: EdgeInsets.symmetric(vertical: 16),
                   color: Theme.of(context).primaryColor,
-                  onPressed: () => true,
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    )
+                  },
                   child: Text(
                     'Log In',
                     style: TextStyle(color: Colors.white),

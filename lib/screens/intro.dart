@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_twitch/screens/home.dart';
 import 'welcome.dart';
