@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1037545269607",
+    "firebase_url": "https://flutter-recipe-b04a9.firebaseio.com",
+    "project_id": "flutter-recipe-b04a9",
+    "storage_bucket": "flutter-recipe-b04a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037545269607:android:014cf09b8d857e17e0a7c2",
+        "android_client_info": {
+          "package_name": "com.example.flutter_twitch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037545269607-u27drk8rq2ef6roopla7f3psl6b9pemu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKR8PrnT8HCCgUoq4Zs8fb6c3KqCBEDds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037545269607-u27drk8rq2ef6roopla7f3psl6b9pemu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
