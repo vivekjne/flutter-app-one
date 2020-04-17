@@ -4,6 +4,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Login'),
+      ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
         return Container(
@@ -21,7 +24,7 @@ class Login extends StatelessWidget {
                     maxLines: 1,
                     autocorrect: false,
                     decoration: InputDecoration(
-                      labelText: "USERNAME",
+                      labelText: "Username",
                       hintText: 'John Doe',
                       filled: true,
                       fillColor: Color(0xFcccccc),
@@ -45,7 +48,7 @@ class Login extends StatelessWidget {
                     maxLines: 1,
                     autocorrect: false,
                     decoration: InputDecoration(
-                      labelText: "PASSWORD",
+                      labelText: "Password",
                       hintText: '*********',
                       filled: true,
                       fillColor: Color(0xFffffff),
@@ -71,11 +74,11 @@ class Login extends StatelessWidget {
                     borderRadius: new BorderRadius.circular(8.0),
                   ),
                   padding: EdgeInsets.symmetric(vertical: 16),
-                  color: Color(0x0ffdededf),
+                  color: Theme.of(context).primaryColor,
                   onPressed: () => true,
                   child: Text(
                     'Log In',
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               )
