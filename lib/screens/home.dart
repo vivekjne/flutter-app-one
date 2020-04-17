@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_twitch/screens/home_tabs/feed.dart';
 import 'home_tabs/discover.dart';
 
 class Home extends StatefulWidget {
@@ -12,10 +13,7 @@ class _HomeState extends State<Home> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   final List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0:Home',
-      style: optionsStyle,
-    ),
+    Feed(),
     Discover(),
     Text(
       'Index 2:Create',

@@ -32,6 +32,27 @@ class _DiscoverState extends State<Discover>
     super.initState();
   }
 
+  Color calculateIndex(index) {
+    if (index % 6 == 0) {
+      return backgroundColors[5];
+    }
+
+    if (index % 5 == 0) {
+      return backgroundColors[4];
+    }
+    if (index % 4 == 0) {
+      return backgroundColors[3];
+    }
+    if (index % 3 == 0) {
+      return backgroundColors[2];
+    }
+    if (index % 2 == 0) {
+      return backgroundColors[1];
+    }
+
+    return backgroundColors[0];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -91,7 +112,7 @@ class _DiscoverState extends State<Discover>
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(4)),
-                          color: backgroundColors[4],
+                          color: calculateIndex(index),
                         ),
                         child: Stack(
                           children: <Widget>[

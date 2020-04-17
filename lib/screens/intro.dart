@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_twitch/screens/home.dart';
 import 'welcome.dart';
 
 class Intro extends StatefulWidget {
@@ -13,7 +14,7 @@ class _IntroState extends State<Intro> {
   void initState() {
     Timer(Duration(seconds: 3), () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Welcome()));
+          .push(MaterialPageRoute(builder: (context) => Home()));
     });
     super.initState();
   }
