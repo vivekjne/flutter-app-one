@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-
+import 'package:flutter_twitch/screens/home.dart';
 
 class Signup extends StatelessWidget {
   @override
@@ -28,16 +28,16 @@ class _SignupFormState extends State<SignupForm> {
         initialDate: selectedDate,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
-      {
-        
-        print(picked);
-        dateController = TextEditingController(text: picked.toString().split(' ')[0]);
-        setState(() {
-          selectedDate = picked;
-        });
-      }
+    if (picked != null && picked != selectedDate) {
+      print(picked);
+      dateController =
+          TextEditingController(text: picked.toString().split(' ')[0]);
+      setState(() {
+        selectedDate = picked;
+      });
+    }
   }
+
   @override
   void initState() {
     super.initState();
@@ -46,35 +46,33 @@ class _SignupFormState extends State<SignupForm> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(left: 10,top: 10),
+            padding: EdgeInsets.only(left: 10, top: 10),
             child: Text(
-                'Email Id',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+              'Email Id',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             child: TextFormField(
-              style: TextStyle(
-                height: 1,
-                fontSize: 20
-              ),
+              style: TextStyle(height: 1, fontSize: 20),
               decoration: new InputDecoration(
                 enabledBorder: const OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey, width: 0.0),
                 ),
                 border: const OutlineInputBorder(),
               ),
-              validator: (value){
-                if(value.isEmpty){
+              validator: (value) {
+                if (value.isEmpty) {
                   return 'Email Id is required';
                 }
                 return value;
@@ -82,30 +80,27 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 10,top: 10),
+            padding: EdgeInsets.only(left: 10, top: 10),
             child: Text(
-                'User Name',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+              'User Name',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             child: TextFormField(
-              style: TextStyle(
-                height: 1,
-                fontSize: 20
-              ),
+              style: TextStyle(height: 1, fontSize: 20),
               decoration: new InputDecoration(
                 enabledBorder: const OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey, width: 0.0),
                 ),
                 border: const OutlineInputBorder(),
               ),
-              validator: (value){
-                if(value.isEmpty){
+              validator: (value) {
+                if (value.isEmpty) {
                   return 'User name is required';
                 }
                 return value;
@@ -113,32 +108,29 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 10,top: 10),
+            padding: EdgeInsets.only(left: 10, top: 10),
             child: Text(
-                'Password',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+              'Password',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             child: TextFormField(
               autofocus: false,
               obscureText: true,
-              style: TextStyle(
-                height: 1,
-                fontSize: 20
-              ),
+              style: TextStyle(height: 1, fontSize: 20),
               decoration: new InputDecoration(
                 enabledBorder: const OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey, width: 0.0),
                 ),
                 border: const OutlineInputBorder(),
               ),
-              validator: (value){
-                if(value.isEmpty){
+              validator: (value) {
+                if (value.isEmpty) {
                   return 'Password is required';
                 }
                 return value;
@@ -146,24 +138,21 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 10,top: 10),
+            padding: EdgeInsets.only(left: 10, top: 10),
             child: Text(
-                'Date of Birth',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+              'Date of Birth',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
+            ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
             child: TextFormField(
               controller: dateController,
-              style: TextStyle(
-                height: 1,
-                fontSize: 20
-              ),
-              onTap: (){
+              style: TextStyle(height: 1, fontSize: 20),
+              onTap: () {
                 FocusScope.of(context).requestFocus(FocusNode());
                 _selectDate(context);
               },
@@ -173,8 +162,8 @@ class _SignupFormState extends State<SignupForm> {
                 ),
                 border: const OutlineInputBorder(),
               ),
-              validator: (value){
-                if(value.isEmpty){
+              validator: (value) {
+                if (value.isEmpty) {
                   return 'Password is required';
                 }
                 return value;
@@ -183,7 +172,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           Container(
             width: constraints.maxWidth,
-            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: RaisedButton(
               color: Color(0x0ff9146fe),
               shape: new RoundedRectangleBorder(
@@ -194,10 +183,12 @@ class _SignupFormState extends State<SignupForm> {
                 'Next',
                 style: TextStyle(color: Colors.white),
               ),
-              onPressed: ()=>{},
+              onPressed: () => {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Home()))
+              },
             ),
           )
-
         ],
       );
     });

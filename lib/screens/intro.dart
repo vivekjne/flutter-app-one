@@ -14,7 +14,7 @@ class _IntroState extends State<Intro> {
   void initState() {
     Timer(Duration(seconds: 3), () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Home()));
+          .push(MaterialPageRoute(builder: (context) => Welcome()));
     });
     super.initState();
   }
