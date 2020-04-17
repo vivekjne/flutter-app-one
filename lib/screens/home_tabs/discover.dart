@@ -25,7 +25,7 @@ class _DiscoverState extends State<Discover>
   void initState() {
     controller = new AnimationController(
         vsync: this, duration: Duration(milliseconds: 200));
-    animation = Tween<double>(begin: 0, end: 8).animate(controller)
+    animation = Tween<double>(begin: 0, end: 4).animate(controller)
       ..addListener(() {
         startAnim = true;
       });
@@ -56,7 +56,7 @@ class _DiscoverState extends State<Discover>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
       child: Column(
         children: <Widget>[
           Container(

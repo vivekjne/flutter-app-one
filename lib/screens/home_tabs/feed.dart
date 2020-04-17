@@ -93,7 +93,7 @@ class _FeedState extends State<Feed> {
                           height: 100,
                           width: 160,
                           padding:
-                              EdgeInsets.all(selectedIndex == index ? 8 : 0),
+                              EdgeInsets.all(selectedIndex == index ? 4 : 0),
                           child: Card(
                             child: Container(
                               decoration: BoxDecoration(
@@ -141,7 +141,7 @@ class _FeedState extends State<Feed> {
                         ),
                       ),
                       Container(
-                        height: 300,
+                        height: 350,
                         child: ListView(
                             primary: false,
                             shrinkWrap: true,
@@ -162,7 +162,7 @@ class _FeedState extends State<Feed> {
                                         children: <Widget>[
                                           Positioned(
                                               top: 20,
-                                              height: 240,
+                                              height: 270,
                                               width: constraints.maxWidth / 1.9,
                                               child: ClipRRect(
                                                 borderRadius:
@@ -193,9 +193,6 @@ class _FeedState extends State<Feed> {
                                         ],
                                       ),
                                     ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
                                     Text(
                                       'Moroccan Fish',
                                       style: TextStyle(
@@ -210,7 +207,8 @@ class _FeedState extends State<Feed> {
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w300),
-                                    )
+                                    ),
+                                    SizedBox(height: 16)
                                   ],
                                 ),
                               );
