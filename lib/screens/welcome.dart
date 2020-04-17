@@ -14,7 +14,7 @@ class Welcome extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                width: constraints.maxWidth / 2.5,
+                width: constraints.maxWidth / 1.8,
                 child: Text(
                   'Welcome to Twitch',
                   style: TextStyle(
