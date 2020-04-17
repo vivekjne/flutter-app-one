@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'signup.dart';
 class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,12 @@ class Welcome extends StatelessWidget {
                   ),
                   padding: EdgeInsets.symmetric(vertical: 16),
                   color: Color(0x0ffdededf),
-                  onPressed: () => true,
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Signup()),
+                    )
+                  },
                   child: Text(
                     'Sign Up',
                     style: TextStyle(color: Colors.black),
