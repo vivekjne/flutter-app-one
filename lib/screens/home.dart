@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_twitch/screens/home_tabs/feed.dart';
 import 'home_tabs/discover.dart';
 import 'home_tabs/notification.dart';
+import 'home_tabs/create.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,10 +17,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _widgetOptions = <Widget>[
     Feed(),
     Discover(),
-    Text(
-      'Index 2:Create',
-      style: optionsStyle,
-    ),
+    Create(),
     Notifications(),
     Text(
       'Index 4:My Account',
@@ -28,6 +26,9 @@ class _HomeState extends State<Home> {
   ];
 
   void _onItemTapped(int index) {
+    // if(index==2){
+    //   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>))
+    // }
     setState(() {
       selectedIndex = index;
     });
