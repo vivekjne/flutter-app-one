@@ -6,7 +6,10 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        title: Text('Login'),
+        backgroundColor: Color(0xffffffff),
+        elevation: 0.0,
       ),
       body: SignupForm(),
     );
@@ -48,148 +51,133 @@ class _SignupFormState extends State<SignupForm> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(left: 10, top: 10),
-            child: Text(
-              'Email Id',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-            child: TextFormField(
-              style: TextStyle(height: 1, fontSize: 20),
-              decoration: new InputDecoration(
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                ),
-                border: const OutlineInputBorder(),
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Email Id is required';
-                }
-                return value;
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10, top: 10),
-            child: Text(
-              'User Name',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-            child: TextFormField(
-              style: TextStyle(height: 1, fontSize: 20),
-              decoration: new InputDecoration(
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                ),
-                border: const OutlineInputBorder(),
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'User name is required';
-                }
-                return value;
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10, top: 10),
-            child: Text(
-              'Password',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-            child: TextFormField(
-              autofocus: false,
-              obscureText: true,
-              style: TextStyle(height: 1, fontSize: 20),
-              decoration: new InputDecoration(
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                ),
-                border: const OutlineInputBorder(),
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Password is required';
-                }
-                return value;
-              },
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10, top: 10),
-            child: Text(
-              'Date of Birth',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-            child: TextFormField(
-              controller: dateController,
-              style: TextStyle(height: 1, fontSize: 20),
-              onTap: () {
-                FocusScope.of(context).requestFocus(FocusNode());
-                _selectDate(context);
-              },
-              decoration: new InputDecoration(
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.grey, width: 0.0),
-                ),
-                border: const OutlineInputBorder(),
-              ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Password is required';
-                }
-                return value;
-              },
-            ),
-          ),
-          Container(
-            width: constraints.maxWidth,
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            child: RaisedButton(
-              color: Color(0x0ff9146fe),
-              shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(8.0),
-              ),
-              padding: EdgeInsets.symmetric(vertical: 16),
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              width: constraints.maxWidth,
               child: Text(
-                'Next',
-                style: TextStyle(color: Colors.white),
+                'SignUp',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                ),
+                textAlign: TextAlign.left,
               ),
-              onPressed: () => {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()))
-              },
             ),
-          )
-        ],
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextFormField(
+                decoration: new InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'Email',
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      borderSide: BorderSide(color: Colors.grey)),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Email Id is required';
+                  }
+                  return value;
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextFormField(
+                decoration: new InputDecoration(
+                  labelText: 'Username',
+                  hintText: 'Username',
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'User name is required';
+                  }
+                  return value;
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextFormField(
+                autofocus: false,
+                obscureText: true,
+                decoration: new InputDecoration(
+                  labelText: 'Password',
+                  hintText: 'Password',
+                  suffixIcon: Icon(Icons.lock),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Password is required';
+                  }
+                  return value;
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextFormField(
+                controller: dateController,
+                onTap: () {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  _selectDate(context);
+                },
+                decoration: new InputDecoration(
+                  labelText: 'Date of birth',
+                  hintText: 'Date of birth',
+                  suffixIcon: Icon(Icons.calendar_today),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      borderSide: BorderSide(color: Colors.grey)),
+                  border: const OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Password is required';
+                  }
+                  return value;
+                },
+              ),
+            ),
+            Container(
+              width: constraints.maxWidth,
+              padding: EdgeInsets.all(15.0),
+              child: RaisedButton(
+                color: Color(0x0ff9146fe),
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(8.0),
+                ),
+                padding: EdgeInsets.all(15.0),
+                child: Text(
+                  'Next',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () => {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()))
+                },
+              ),
+            )
+          ],
+        ),
       );
     });
   }

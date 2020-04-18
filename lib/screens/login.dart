@@ -5,7 +5,10 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         title: Text('Login'),
+        backgroundColor: Color(0xffffffff),
+        elevation: 0.0,
       ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
@@ -16,6 +19,18 @@ class Login extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Container(
+                width: constraints.maxWidth / 1.8,
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 40,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
               Container(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -28,6 +43,7 @@ class Login extends StatelessWidget {
                       hintText: 'John Doe',
                       filled: true,
                       fillColor: Color(0xFcccccc),
+                      suffixIcon: Icon(Icons.lock),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         borderSide: BorderSide(color: Colors.grey),
@@ -52,6 +68,7 @@ class Login extends StatelessWidget {
                       hintText: '*********',
                       filled: true,
                       fillColor: Color(0xFffffff),
+                      suffixIcon: Icon(Icons.lock),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10.0)),
                         borderSide: BorderSide(color: Colors.grey),
@@ -81,7 +98,19 @@ class Login extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-              )
+              ),
+              Container(
+                width: constraints.maxWidth,
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  "Don't have an account SignUp!",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Theme.of(context).primaryColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ],
           ),
         );
