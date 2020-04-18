@@ -62,8 +62,9 @@ class _HomeState extends State<Home> {
           selectedItemColor: Theme.of(context).primaryColor,
           onTap: _onItemTapped,
           unselectedItemColor: Colors.grey[500],
-          iconSize: 24,
+          iconSize: 32,
           type: BottomNavigationBarType.fixed,
+          selectedFontSize: 0,
         ),
       ),
     );
