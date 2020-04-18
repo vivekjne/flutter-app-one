@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:validators/validators.dart' as validator;
-import 'package:validators/sanitizers.dart' as sanitizer;
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -38,6 +37,9 @@ class _FirebaseRegisterState extends State<FirebaseRegister> {
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(labelText: 'Email'),
+                    onChanged: (value) {
+                      _formKey.currentState.validate();
+                    },
                     validator: (String value) {
                       if (value.isEmpty) {
                         return 'Email is required';
@@ -51,6 +53,9 @@ class _FirebaseRegisterState extends State<FirebaseRegister> {
                     controller: _passwordController,
                     decoration: InputDecoration(labelText: 'Password'),
                     obscureText: true,
+                    onChanged: (value) {
+                      _formKey.currentState.validate();
+                    },
                     validator: (String value) {
                       if (value.isEmpty) {
                         return 'Password is required';
