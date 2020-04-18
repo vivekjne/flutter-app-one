@@ -13,7 +13,7 @@ class TwitchApp extends StatelessWidget {
     return MaterialApp(
         title: 'Twitch App',
         theme: ThemeData(primaryColor: Color(0x0ff9146fe)),
-        home: Notifications());
+        home: Intro());
     // Scaffold(body: Home()));
   }
 }

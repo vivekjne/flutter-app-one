@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_twitch/screens/home_tabs/feed.dart';
 import 'home_tabs/discover.dart';
+import 'home_tabs/notification.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,10 +20,7 @@ class _HomeState extends State<Home> {
       'Index 2:Create',
       style: optionsStyle,
     ),
-    Text(
-      'Index 3:Notifications',
-      style: optionsStyle,
-    ),
+    Notifications(),
     Text(
       'Index 4:My Account',
       style: optionsStyle,
