@@ -20,10 +20,6 @@ class _HomeState extends State<Home> {
     Create(),
     Notifications(),
     Text(
-      'Index 3:Notifications',
-      style: optionsStyle,
-    ),
-    Text(
       'Index 4:My Account',
       style: optionsStyle,
     ),
