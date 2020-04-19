@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_twitch/screens/story.dart';
 
 class Feed extends StatefulWidget {
   @override
@@ -141,72 +142,80 @@ class _FeedState extends State<Feed> {
                               scrollDirection: Axis.horizontal,
                               padding: EdgeInsets.only(left: 20, right: 10),
                               children: List.generate(10, (index) {
-                                return Container(
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8)),
-                                  width: constraints.maxWidth / 1.8,
-                                  padding: EdgeInsets.only(right: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Expanded(
-                                        child: Stack(
-                                          overflow: Overflow.clip,
-                                          children: <Widget>[
-                                            Positioned(
-                                                top: 20,
-                                                height: 270,
-                                                width:
-                                                    constraints.maxWidth / 1.9,
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          20.0),
-                                                  child: Image(
-                                                    fit: BoxFit.cover,
-                                                    image: NetworkImage(
-                                                        'https://www.bbcgoodfood.com/sites/default/files/recipe_images/moroccan-fish-stew.jpg'),
-                                                  ),
-                                                )),
-                                            Positioned(
-                                              left: 50,
-                                              child: Text(
-                                                'username',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w500),
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Story()));
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8)),
+                                    width: constraints.maxWidth / 1.8,
+                                    padding: EdgeInsets.only(right: 10),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Expanded(
+                                          child: Stack(
+                                            overflow: Overflow.clip,
+                                            children: <Widget>[
+                                              Positioned(
+                                                  top: 20,
+                                                  height: 270,
+                                                  width: constraints.maxWidth /
+                                                      1.9,
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20.0),
+                                                    child: Image(
+                                                      fit: BoxFit.cover,
+                                                      image: NetworkImage(
+                                                          'https://www.bbcgoodfood.com/sites/default/files/recipe_images/moroccan-fish-stew.jpg'),
+                                                    ),
+                                                  )),
+                                              Positioned(
+                                                left: 50,
+                                                child: Text(
+                                                  'username',
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
                                               ),
-                                            ),
-                                            Positioned(
-                                              child: CircleAvatar(
-                                                radius: 20,
-                                                backgroundImage: NetworkImage(
-                                                    'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg'),
+                                              Positioned(
+                                                child: CircleAvatar(
+                                                  radius: 20,
+                                                  backgroundImage: NetworkImage(
+                                                      'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg'),
+                                                ),
+                                                top: 0,
                                               ),
-                                              top: 0,
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        'Moroccan Fish',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16),
-                                      ),
-                                      SizedBox(
-                                        height: 4,
-                                      ),
-                                      Text(
-                                        '4views . 23 steps',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w300),
-                                      ),
-                                      SizedBox(height: 16)
-                                    ],
+                                        Text(
+                                          'Moroccan Fish',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16),
+                                        ),
+                                        SizedBox(
+                                          height: 4,
+                                        ),
+                                        Text(
+                                          '4views . 23 steps',
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                        SizedBox(height: 16)
+                                      ],
+                                    ),
                                   ),
                                 );
                               })),

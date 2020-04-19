@@ -4,6 +4,7 @@ import 'screens/welcome.dart';
 import 'screens/home.dart';
 import 'screens/samples/firebase_register.dart';
 import 'screens/home_tabs/notification.dart';
+import 'screens/story.dart';
 
 void main() => runApp(TwitchApp());
 
