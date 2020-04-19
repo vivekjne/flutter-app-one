@@ -63,6 +63,7 @@ class Login extends StatelessWidget {
                     minLines: 1,
                     maxLines: 1,
                     autocorrect: false,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: '*********',

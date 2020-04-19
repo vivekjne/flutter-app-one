@@ -7,12 +7,14 @@ class Notifications extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        centerTitle: true,
         title: Text(
           'Notifications',
           style: TextStyle(color: Theme.of(context).primaryColor),
         ),
         elevation: 0.0,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        actions: <Widget>[Icon(Icons.settings)],
       ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
@@ -21,7 +23,8 @@ class Notifications extends StatelessWidget {
           return NotificationItem(
             title: 'Two-line ListTile',
             subtitle: 'Here is a second line',
-            color: index % 2 == 0 ? Colors.red : Colors.green,
+            //color: index % 2 == 0 ? Color(0x0ff9146fe) : Colors.white,
+            color: index == 1 ? Color(0x0ff9146fe) : Colors.white,
           );
         }));
       }),
