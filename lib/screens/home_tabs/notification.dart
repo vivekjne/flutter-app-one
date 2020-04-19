@@ -14,7 +14,7 @@ class Notifications extends StatelessWidget {
         ),
         elevation: 0.0,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-        actions: <Widget>[Icon(Icons.settings)],
+        actions: <Widget>[Icon(Icons.search)],
       ),
       body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
